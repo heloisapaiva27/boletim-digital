@@ -1,0 +1,89 @@
+/* Configuração global para zerar margens e usar fonte legível */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fundo da página em tom roxo bem suave */
+body {
+  background-color: #f3f0f8;
+  color: #2a1b40;
+  padding: 20px;
+}
+
+/* Cabeçalho com cor principal azul e destaque em roxo */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #0d47a1; /* Azul principal */
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  border-bottom: 5px solid #6a1b9a; /* Detalhe roxo */
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Organização dos cards de resumo em grade (grid) */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Estilo individual de cada card */
+.card {
+  background-color: #ffffff;
+  border: 2px solid #d1c4e9; /* Borda roxo suave */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left; /* Alinhado à esquerda */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  font-size: 0.95rem;
+  color: #4a148c; /* Roxo para títulos dos cards */
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Texto BEM GRANDE nos cards, conforme você pediu */
+.card p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0d47a1; /* Valor principal em azul */
+  line-height: 1.2;
+}
+
+/* Card de destaque com vermelho para atenção */
+.card-atencao {
+  border-left: 6px solid #d32f2f; /* Borda vermelha de destaque */
+}
+
+.card-atencao p {
+  color: #c62828; /* Texto em destaque vermelho */
+}
+
+/* Card de bom desempenho com detalhe azul */
+.card-bom {
+  border-left: 6px solid #0d47a1;
+}
+
+/* Área da tabela responsiva */
+.tabela-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box

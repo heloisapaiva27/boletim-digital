@@ -1,12 +1,69 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="style.css"> 
-    <title>BOLETIM DIGITAL</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boletim Digital - 8º Ano</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+  <!-- Cabeçalho do site com o título principal e subtítulo -->
+  <header>
+    <h1>Boletim Digital</h1>
+    <p class="subtitulo">Estudante Exemplo — 8º Ano</p>
+  </header>
+
+  <main>
+    <!-- Área de cards com o resumo geral -->
+    <section class="cards-container">
+      <div class="card">
+        <h2>Média Geral</h2>
+        <p id="card-media-geral">—</p>
+      </div>
+
+      <div class="card">
+        <h2>Total de Faltas</h2>
+        <p id="card-total-faltas">—</p>
+      </div>
+
+      <div class="card card-bom">
+        <h2>Bom Desempenho</h2>
+        <p id="card-bom-desempenho">—</p>
+      </div>
+
+      <div class="card card-atencao">
+        <h2>Precisa de Atenção</h2>
+        <p id="card-precisa-atencao">—</p>
+      </div>
+
+      <div class="card">
+        <h2>Frequência</h2>
+        <p id="card-frequencia">—</p>
+      </div>
+    </section>
+
+    <!-- Tabela responsiva com as notas e situações -->
+    <section class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>1º Tri</th>
+            <th>2º Tri</th>
+            <th>3º Tri</th>
+            <th>Média</th>
+            <th>Faltas</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+          <!-- As linhas com as disciplinas serão inseridas aqui pelo JavaScript -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
