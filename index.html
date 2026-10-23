@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -7,60 +7,81 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Cabeçalho do site com o título principal e subtítulo -->
   <header>
     <h1>Boletim Digital</h1>
-    <p class="subtitulo">Estudante Exemplo — 8º Ano</p>
+    <p>Acompanhamento Escolar — 8º Ano</p>
   </header>
 
-  <main>
-    <!-- Área de cards com o resumo geral -->
-    <section class="cards-container">
-      <div class="card">
-        <h2>Média Geral</h2>
-        <p id="card-media-geral">—</p>
-      </div>
-
-      <div class="card">
-        <h2>Total de Faltas</h2>
-        <p id="card-total-faltas">—</p>
-      </div>
-
-      <div class="card card-bom">
-        <h2>Bom Desempenho</h2>
-        <p id="card-bom-desempenho">—</p>
-      </div>
-
-      <div class="card card-atencao">
-        <h2>Precisa de Atenção</h2>
-        <p id="card-precisa-atencao">—</p>
-      </div>
-
-      <div class="card">
-        <h2>Frequência</h2>
-        <p id="card-frequencia">—</p>
-      </div>
+  <main class="container">
+    <!-- TELA DE ACESSO POR PIN -->
+    <section id="secao-login" class="card-login">
+      <h2>Acesso ao Boletim</h2>
+      <p class="info-aluno"><strong>Turma:</strong> 8C | <strong>Chamada:</strong> 8</p>
+      
+      <form id="form-login">
+        <div class="campo-grupo">
+          <label for="input-pin">Digite seu PIN:</label>
+          <input type="password" id="input-pin" maxlength="10" placeholder="Digite o PIN" required autocomplete="off">
+        </div>
+        <button type="submit" id="btn-entrar">Entrar</button>
+      </form>
+      <div id="mensagem-login" class="mensagem"></div>
     </section>
 
-    <!-- Tabela responsiva com as notas e situações -->
-    <section class="tabela-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Disciplina</th>
-            <th>1º Tri</th>
-            <th>2º Tri</th>
-            <th>3º Tri</th>
-            <th>Média</th>
-            <th>Faltas</th>
-            <th>Situação</th>
-          </tr>
-        </thead>
-        <tbody id="corpo-tabela">
-          <!-- As linhas com as disciplinas serão inseridas aqui pelo JavaScript -->
-        </tbody>
-      </table>
+    <!-- ÁREA DO BOLETIM (OCULTA ANTES DO LOGIN) -->
+    <section id="secao-boletim" class="oculto">
+      <!-- CARDS DE RESUMO -->
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Média Geral</h3>
+          <p id="card-media-geral" class="card-valor">—</p>
+        </div>
+        <div class="card">
+          <h3>Total de Faltas</h3>
+          <p id="card-total-faltas" class="card-valor">—</p>
+        </div>
+        <div class="card">
+          <h3>Bom Desempenho</h3>
+          <p id="card-bom-desempenho" class="card-valor">—</p>
+        </div>
+        <div class="card">
+          <h3>Precisa de Atenção</h3>
+          <p id="card-precisa-atencao" class="card-valor">—</p>
+        </div>
+        <div class="card card-frequencia">
+          <h3>Frequência</h3>
+          <p id="card-frequencia" class="card-valor">—</p>
+        </div>
+      </div>
+
+      <!-- PAINEL DE AÇÕES DA TABELA -->
+      <div class="acoes-boletim">
+        <button id="btn-editar" class="btn-acao">Alterar dados</button>
+        <button id="btn-salvar" class="btn-acao btn-sucesso oculto">Salvar alterações</button>
+        <button id="btn-cancelar" class="btn-acao btn-secundario oculto">Cancelar</button>
+      </div>
+
+      <div id="mensagem-boletim" class="mensagem"></div>
+
+      <!-- TABELA DE NOTAS -->
+      <div class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela">
+            <!-- Conteúdo gerado dinamicamente via JavaScript -->
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
 
