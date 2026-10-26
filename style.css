@@ -41,21 +41,6 @@ header h1 {
   margin-bottom: 5px;
 }
 
-header p {
+#infoAluno {
   color: #d8b4fe;
   font-size: 1rem;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* CARD DE LOGIN (PIN) */
-.card-login {
-  background-color: var(--bg-card);
-  border: 2px solid var(--borda-card);
-  border-radius: 12px;
-  max-width: 400px;
-  margin:

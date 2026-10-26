@@ -32,4 +32,25 @@ let graficoEvolucao = null;
 let graficoFaltas = null;
 
 /* ==========================================================================
-   NÚCLEO
+   NÚCLEO PROTEGIDO — HELPER DE NORMALIZAÇÃO DE NOTA
+   ========================================================================== */
+function normalizarNota(val) {
+  if (val === null || val === undefined || val === "") return null;
+  if (typeof val === "number") {
+    if (isNaN(val)) return null;
+    if (val > 10 && val <= 100) return val / 10;
+    return val;
+  }
+  let str = String(val).replace(",", ".").trim();
+  if (str === "") return null;
+  let num = parseFloat(str);
+  if (isNaN(num)) return null;
+  if (num > 10 && num <= 100) return num / 10;
+  return num;
+}
+
+function calcularMedia(tri1, tri2, tri3) {
+  let n1 = normalizarNota(tri1);
+  let n2 = normalizarNota(tri2);
+  let n3 = normalizarNota(tri3);
+  let soma = 0;
