@@ -13,14 +13,21 @@ let dadosAtuais = null;
 // DADOS DE FALLBACK (USADOS QUANDO dados RETORNADOS PELA API FOREM null)
 const DADOS_INICIAIS_PADRAO = {
   disciplinas: [
-    { nome: "Português", tri1: 8.5, tri2: 7.0, tri3: 8.0, faltas: [2, 1, 0] },
-    { nome: "Matemática", tri1: 6.0, tri2: 7.5, tri3: 8.5, faltas: [4, 2, 1] },
-    { nome: "História", tri1: 9.0, tri2: 8.0, tri3: 9.5, faltas: [0, 1, 0] },
-    { nome: "Geografia", tri1: 7.5, tri2: 8.0, tri3: 7.0, faltas: [1, 0, 2] },
-    { nome: "Ciências", tri1: 8.0, tri2: 8.5, tri3: 9.0, faltas: [1, 2, 0] },
-    { nome: "Inglês", tri1: 9.5, tri2: 9.0, tri3: 10.0, faltas: [0, 0, 0] },
-    { nome: "Arte", tri1: 10.0, tri2: 9.5, tri3: 9.0, faltas: [0, 0, 0] },
-    { nome: "Educação Física", tri1: 9.0, tri2: 9.0, tri3: 9.5, faltas: [2, 0, 1] }
+    { disciplina: "Língua Portuguesa", tri1: 82, tri2: "7,8", tri3: 85, faltas: [2, 1, 1] },
+    { disciplina: "Matemática", tri1: 52, tri2: "5,8", tri3: null, faltas: [3, 2, 1] },
+    { disciplina: "Ciências", tri1: "8,1", tri2: 76, tri3: 8.0, faltas: [1, 2, 0] },
+    { disciplina: "História", tri1: 7.0, tri2: 84, tri3: null, faltas: [1, 1, 1] },
+    { disciplina: "Geografia", tri1: 68, tri2: 7.3, tri3: "7,9", faltas: [0, 1, 1] },
+    { disciplina: "Língua Inglesa", tri1: 86, tri2: "8,1", tri3: 8.7, faltas: [1, 0, 0] },
+    { disciplina: "Arte", tri1: 9.0, tri2: 92, tri3: null, faltas: [1, 1, 0] },
+    { disciplina: "Educação Física", tri1: 95, tri2: 9.0, tri3: "9,4", faltas: [0, 1, 0] },
+    { disciplina: "Educação Digital", tri1: 88, tri2: 9.1, tri3: 93, faltas: [1, 0, 1] },
+    { disciplina: "Educação Financeira", tri1: 74, tri2: "7,8", tri3: null, faltas: [1, 1, 1] },
+    { disciplina: "Estudo Orientado", tri1: 8.0, tri2: 83, tri3: "8,5", faltas: [0, 1, 0] },
+    { disciplina: "Redação e Leitura", tri1: 62, tri2: "6,8", tri3: null, faltas: [2, 1, 1] },
+    { disciplina: "Pensamento Lógico", tri1: 48, tri2: 5.6, tri3: "6,0", faltas: [2, 2, 1] },
+    { disciplina: "Literatura Arte e Movimento", tri1: "7,7", tri2: 80, tri3: null, faltas: [1, 0, 1] },
+    { disciplina: "Práticas Experimentais", tri1: 58, tri2: "6,2", tri3: 6.4, faltas: [1, 1, 1] }
   ]
 };
 
@@ -189,7 +196,7 @@ function preencherCards() {
     card.className = "card-disciplina";
 
     const h3 = document.createElement("h3");
-    h3.textContent = disc.nome || "Disciplina";
+    h3.textContent = disc.disciplina || disc.nome || "Disciplina";
 
     const m = calcularMedia(disc.tri1, disc.tri2, disc.tri3);
     const mediaFormatada = m !== null ? m.toFixed(1).replace(".", ",") : "-";
@@ -225,7 +232,7 @@ function preencherTabela() {
     const tr = document.createElement("tr");
 
     const tdNome = document.createElement("td");
-    tdNome.textContent = disc.nome || "";
+    tdNome.textContent = disc.disciplina || disc.nome || "";
 
     const n1 = normalizarNota(disc.tri1);
     const n2 = normalizarNota(disc.tri2);
@@ -280,7 +287,7 @@ function abrirEditor() {
     item.className = "item-editor";
 
     const title = document.createElement("h4");
-    title.textContent = disc.nome || `Disciplina ${idx + 1}`;
+    title.textContent = disc.disciplina || disc.nome || `Disciplina ${idx + 1}`;
     item.appendChild(title);
 
     const grid = document.createElement("div");
@@ -465,7 +472,7 @@ function atualizarGraficoMedias() {
   const dataValues = [];
 
   dadosAtuais.disciplinas.forEach((disc) => {
-    labels.push(disc.nome || "Disciplina");
+    labels.push(disc.disciplina || disc.nome || "Disciplina");
     const m = calcularMedia(disc.tri1, disc.tri2, disc.tri3);
     dataValues.push(m !== null ? Number(m.toFixed(1)) : null);
   });
